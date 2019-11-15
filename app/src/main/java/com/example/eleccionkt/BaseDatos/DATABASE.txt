@@ -1,0 +1,17 @@
+Query DATABASE
+CREATE TABLE usuario(ncontrol char(8) PRIMARY KEY, 
+nombre_alumno varchar(35),sexo char(1), id_carrera int, nip char(4))
+ALTER TABLE usuario add FOREIGN KEY(id_carrera) REFERENCES carrera(id_carrera)
+
+CREATE TABLE candidato(id_candidato int AUTO_INCREMENT PRIMARY KEY,
+ncontrol char(8), descripcion varchar(120),propuesta varchar(100))
+ALTER TABLE candidato add FOREIGN KEY(ncontrol) REFERENCES usuario(ncontrol)
+
+CREATE TABLE carrera(id_carrera int AUTO_INCREMENT PRIMARY KEY
+,nombre_carrera varchar(60))
+
+
+CREATE TABLE voto(id_voto int AUTO_INCREMENT PRIMARY KEY,
+id_candidato int,ncontrol char(8),numero_voto int)
+ALTER TABLE voto add FOREIGN KEY(ncontrol) REFERENCES usuario(ncontrol)
+ALTER TABLE voto add FOREIGN KEY(id_candidato) REFERENCES candidato(id_candidato)

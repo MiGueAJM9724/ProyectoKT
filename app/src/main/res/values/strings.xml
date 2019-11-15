@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Eleccionkt</string>
+    <string name="etnip">Nip *</string>
+    <string name="etncontrol">Número de control *</string>
 </resources>
