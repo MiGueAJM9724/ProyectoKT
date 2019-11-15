@@ -12,6 +12,7 @@ class ActivityLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        supportActionBar!!.hide()
         etncontrol.requestFocus()
         btnLogin.setOnClickListener {
             if(etncontrol.text!!.isEmpty() || etnip.text!!.isEmpty()){

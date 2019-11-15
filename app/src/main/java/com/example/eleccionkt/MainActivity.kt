@@ -1,5 +1,6 @@
 package com.example.eleccionkt
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          //getUsuarios()
+        startActivity(Intent(this,ActivityLogin::class.java))
     }
     fun getUsuarios(v:View){
         Toast.makeText(this,"a",Toast.LENGTH_SHORT).show()
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             Request.Method.POST,wsURL,null, Response.Listener { response ->
                 val succ = response["success"]
                 val msg = response["message"]
-                val usuariosJson = response.getJSONArray("alumno")
+                val usuariosJson = response.getJSONArray("usuario")
                 for (i in 0 until usuariosJson.length()){
                     val ncontrol = usuariosJson.getJSONObject(i).getString("ncontrol")
                     val nombre = usuariosJson.getJSONObject(i).getString("nombre_alumno")
