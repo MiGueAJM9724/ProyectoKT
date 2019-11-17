@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="403dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,8 @@
                     android:id="@+id/etncontrol"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/etncontrol" />
+                    android:hint="@string/etncontrol"
+                    android:inputType="numberSigned"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +82,8 @@
                     android:id="@+id/etnip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/etnip" />
+                    android:hint="@string/etnip"
+                    android:inputType="numberPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

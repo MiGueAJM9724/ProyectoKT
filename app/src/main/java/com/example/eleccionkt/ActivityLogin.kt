@@ -4,14 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
 import com.example.eleccionkt.BaseDatos.BaseDatos
-import com.example.eleccionkt.BaseDatos.VolleySingleton
-import com.example.eleccionkt.BaseDatos.address
+import com.example.eleccionkt.RecyclerViewCandidato.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import org.json.JSONObject
 
 class ActivityLogin : AppCompatActivity() {
     private lateinit var scontrol: String
@@ -36,7 +31,8 @@ class ActivityLogin : AppCompatActivity() {
                     result.close()
                     admin.close()
                     if (ncontrol == scontrol && nip == snip) {
-                        val actividad = Intent(this,MainActivity::class.java)
+                        val actividad = Intent(this,
+                            MainActivity::class.java)
                         actividad.putExtra("ncontrol",ncontrol)
                         actividad.putExtra("nip",nip)
                         Toast.makeText(this,"LOGIN: $ncontrol" ,Toast.LENGTH_LONG).show()
